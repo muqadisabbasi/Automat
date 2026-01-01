@@ -1,0 +1,4 @@
+.env
+.env.demo
+.env.stage
+node_modules/

@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "cypress": "^15.7.1",
+    "cypress-iframe": "^1.0.1",
+    "cypress-real-events": "^1.15.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "scripts": {
+    "cy:op:demo": "npx cypress open --config-file cypress.config.demo.js",
+    "cy:op:stage": "npx cypress open --config-file cypress.config.stage.js"
+  }
+}
