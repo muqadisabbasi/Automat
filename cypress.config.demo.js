@@ -1,23 +1,24 @@
 const { defineConfig } = require("cypress");
 const baseConfig = require ("./cypress.config")
-require ('dotenv').config ( { path: './.env'})
+require('dotenv').config({ path: './.env.demo' })
 
 const e2eOverride = {
-    baseURL : "https://opensource-demo.orangehrmlive.com/"
+    baseURL : "https://opensource-demo.orangehrmlive.com/",
+    pageLoadTimeout: 120000
 }
    const envOverride = {
     USERNAME: process.env.USERNAME_DEMO,
     PASSWORD: process.env.PASSWORD_DEMO,
-} 
+}  
 
 module.exports = defineConfig ({
         ...baseConfig,
     e2e : {
-        ...baseConfig,
+        ...baseConfig.e2e,
         ...e2eOverride,
     },
     env :{
-        ...baseConfig,
+        ...baseConfig.env,
         ...envOverride,
     }
 })
